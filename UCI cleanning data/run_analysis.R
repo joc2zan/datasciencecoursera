@@ -1,6 +1,6 @@
-## Set working directory
+# Set working directory
 
-setwd("./UCI HAR Dataset/")
+setwd("./UCI cleanning data/UCI HAR Dataset/")
 
 
 #### READ COLNAMES FROM FEATURES.TXT
@@ -133,8 +133,11 @@ dataset_coursera2<-data.frame(s1,s2,s3,s4,s5,s6)
 
 ###--------------------------------------measurements
 
-n<-grep(pattern = "*mean|*std",x = colnames(dataset_coursera2))
-measurements<-dataset_coursera2[,n]
+n<-grep(pattern = "*mean",x = colnames(dataset_coursera2))
+measurements_mean<-dataset_coursera2[,n]
+
+n<-grep(pattern = "*std",x = colnames(dataset_coursera2))
+measurements_std<-dataset_coursera2[,n]
 
 ##---------------------------------------Final Dataset 
 View(dataset_coursera2)
